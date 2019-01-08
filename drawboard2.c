@@ -19,6 +19,8 @@ void drawBoard()
 
 int main()
 {
+      printf("Enter a value: ")
+
     drawBoard();
     return 0;
 }
