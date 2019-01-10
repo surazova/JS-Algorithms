@@ -32,3 +32,21 @@ function makeLine(length) {
   return line;
 }
 console.log(makeLine(5));
+
+
+function makeTree(n) {
+  var line = "";
+  if (n < 1) {
+    return n
+
+  }
+  else {
+    return makeTree(n + 1)
+    console.log(line = "X");
+    // line += "X";
+
+
+  }
+  //line = line + "\n"
+}
+console.log(makeTree(4));
