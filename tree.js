@@ -44,9 +44,7 @@ function makeTree(n) {
     return makeTree(n + 1)
     console.log(line = "X");
     // line += "X";
-
-
-  }
-  //line = line + "\n"
-}
-console.log(makeTree(4));
+    // // }
+    // // //line = line + "\n"
+    // }
+    console.log(makeTree(4));
