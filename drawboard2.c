@@ -2,6 +2,26 @@
 #include<string.h>
 #include<stdlib.h> 
 
+// Declarations 
+char board[9] = {'o', '0', '1', '2', '3','4','5','6','7','8','9'};
+
+int gameTime();
+void drawBoard();
+
+// Changes: moved the int main to the beginning 
+int main()
+{
+    //  printf("Enter a value: ")
+
+    drawBoard();
+    return 0;
+}
+
+
+
+/********************
+ * Actual Tic-Tac-Toe Board
+ *******************/
 void drawBoard() 
 {
   char board[9];
@@ -17,10 +37,3 @@ void drawBoard()
    printf(" %c | %c | %c \n", board[0], board[1], board[2]);
   }
 
-int main()
-{
-      printf("Enter a value: ")
-
-    drawBoard();
-    return 0;
-}
