@@ -127,6 +127,10 @@ int gameTime()
   else if(board[0] == board[4] && board[4] == board[8])
     return 1;
     
+  // TODO: Add a functionality to drop a game if you want to and then automatically restart the game
+  //else if(board[11])
+  //  return 1;
+    
   // For draws/no wins = there is no above combination 
   
   else if (board[0] != 0 && board[1] != '1' && board[2] != '2' && board[3] != '3' && board[4] != '4'
