@@ -111,7 +111,12 @@ int gameTime()
 {
   // Horizontal wins with all Xs or all Os
   // 12, 13, 14, 15
-  // 
+  // 8, 9, 10, 11
+  // 4, 5, 6, 7
+  // 0, 1, 2, 3
+  
+  if (board[12] == board[13] && board[13] == board[14] && board[14] == board[15])
+    return 1;
   
   if(board[0] == board)
 }
