@@ -58,7 +58,7 @@ int main()
     else if (choice == 9 && board[9] == '9')
       board[9] = place;
           
-    else if (choice == 10 && board[10] == "10")
+    else if (choice == 10 && board[10] == '10')
       board[10] = place;
           
     else if (choice == 11 && board[11] == "11")
@@ -127,7 +127,17 @@ int gameTime()
   if (board[0] == board[1] && board[1] == board[2] && board[2] == board[3])
     return 1;
   
-  if(board[0] == board)
+  // Vertical wins with all Xs or all Os
+  // 12, 8, 4, 0
+  // 13, 9, 5, 1
+  // 14, 10, 6, 2
+  // 15, 11, 7, 3
+  
+  
+  // Diagonal wins with all Xs or all Os
+  // 12, 9, 6, 3
+  // 15, 6, 5, 0
+  
 }
 void drawBoard() {
   system("cls");
