@@ -58,22 +58,22 @@ int main()
     else if (choice == 9 && board[9] == '9')
       board[9] = place;
           
-    else if (choice == 10 && board[10] == '10')
+    else if (choice == 10 && board[10] == "10")
       board[10] = place;
           
-    else if (choice == 11 && board[11] == '11')
+    else if (choice == 11 && board[11] == "11")
       board[11] = place;    
     
-    else if (choice == 12 && board[12] == '12')
+    else if (choice == 12 && board[12] == "12")
       board[12] = place;    
     
-    else if (choice == 13 && board[13] == '13')
+    else if (choice == 13 && board[13] == "13")
       board[13] = place;
           
-    else if (choice == 14 && board[14] == '14')
+    else if (choice == 14 && board[14] == "14")
       board[14] = place;    
     
-    else if (choice == 15 && board[15] == '15')
+    else if (choice == 15 && board[15] == "15")
       board[15] = place;
     
     /////
@@ -116,6 +116,15 @@ int gameTime()
   // 0, 1, 2, 3
   
   if (board[12] == board[13] && board[13] == board[14] && board[14] == board[15])
+    return 1;
+  
+  if (board[8] == board[9] && board[9] == board[10] && board[10] == board[11])
+    return 1;
+  
+  if (board[4] == board[5] && board[5] == board[6] && board[6] == board[7])
+    return 1;
+    
+  if (board[0] == board[1] && board[1] == board[2] && board[2] == board[3])
     return 1;
   
   if(board[0] == board)
