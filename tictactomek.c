@@ -102,7 +102,19 @@ int main()
     return 0;
 }
 
+/// Game conditions 
+// -1: Game is in progress
+// 0: Game is over with a draw
+// 1: Game is over with a winner
 
+int gameTime()
+{
+  // Horizontal wins with all Xs or all Os
+  // 12, 13, 14, 15
+  // 
+  
+  if(board[0] == board)
+}
 void drawBoard() {
   system("cls");
   printf("Want to play a game of Tic-Tac-Tomek!?\n");
