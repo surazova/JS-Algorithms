@@ -37,7 +37,7 @@ int main()
     // }
     place = (player == 1) ? 'X' : 'O';
     
-    //Do...while loop: Body is executedf once, before checking the test expression at the end of the loop
+    //Do...while loop: Body is executed once, before checking the test expression at the end of the loop
         if (choice == 0 && board[0] == '0')
           board[0] = place;
           
@@ -129,7 +129,7 @@ int gameTime()
     
   // TODO: Add a functionality to drop a game if you want to and then automatically restart the game
   //else if(board[11])
-  //  return 1;
+  //  return 1;8
     
   // For draws/no wins = there is no above combination 
   
