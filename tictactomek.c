@@ -17,9 +17,91 @@ int main()
   
   //if...else...if nested inside of a do...while loop 
   do {
+    drawBoard();
     
+    player = (player % 2) ? 1 : 2;
+    
+    printf("Player %d, make your choice: ", player);
+    
+    scanf("%d", &choice);
+    
+    place = (player == 1) ? 'X' : 'O';
+    
+    // if...else...if loop that places your chosen number (string) inside of the set index of the board 
+    if (choice == 0 && board[0] == '0')
+      board[0] = place;
+    
+    else if (choice == 1 && board[1] == '1')
+      board[1] = place;
+      
+    else if (choice == 2 && board[2] == '2')
+      board[2] = place;
+          
+    else if (choice == 3 && board[3] == '3')
+      board[3] = place;
+          
+    else if (choice == 4 && board[4] == '4')
+      board[4] = place;
+          
+    else if (choice == 5 && board[5] == '5')
+      board[5] = place;
+          
+    else if (choice == 6 && board[6] == '6')
+      board[6] = place;
+          
+    else if (choice == 7 && board[7] == '7')
+      board[7] = place;
+          
+    else if (choice == 8 && board[8] == '8')
+      board[8] = place;
+          
+    else if (choice == 9 && board[9] == '9')
+      board[9] = place;
+          
+    else if (choice == 10 && board[10] == '10')
+      board[10] = place;
+          
+    else if (choice == 11 && board[11] == '11')
+      board[11] = place;    
+    
+    else if (choice == 12 && board[12] == '12')
+      board[12] = place;    
+    
+    else if (choice == 13 && board[13] == '13')
+      board[13] = place;
+          
+    else if (choice == 14 && board[14] == '14')
+      board[14] = place;    
+    
+    else if (choice == 15 && board[15] == '15')
+      board[15] = place;
+    
+    /////
+    else 
+    {
+      printf("Invalid move!");
+      
+      player--;
+      
+      getChar();
+    }
+    i = gameTime();
+    
+    player++;
   }
+  
+  //While condition 
+  while(i == -1);
+  drawBoard();
+  if (i == 1)
+    printf("\aPlayer %d won!!!!", --player);
+  else 
+    printf("\n\a Game ends in a draw!!!!\n");
+    
+    getchar();
+    return 0;
 }
+
 
 void drawBoard() {
   system("cls");
