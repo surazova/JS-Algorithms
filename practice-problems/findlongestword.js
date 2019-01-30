@@ -9,6 +9,8 @@ function findLongestWordLength(str) {
 
     // 3: Create a for loop that runs through the words and compares them to each other 
     for (var i = 0; i < strSplit.length; i++) {
+
+        // if the length of the split word is greater than the longest word, then longWord takes this value
         if (strSplit[i].length > longWord) {
             longWord = strSplit[i].length;
         }
