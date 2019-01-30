@@ -10,7 +10,7 @@ function findLongestWordLength(str) {
     // 3: Create a for loop that runs through the words and compares them to each other 
     for (var i = 0; i < strSplit.length; i++) {
         if (strSplit[i].length > longWord) {
-            longWord = strSplit.length;
+            longWord = strSplit[i].length;
         }
     }
 
