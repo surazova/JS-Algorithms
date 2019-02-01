@@ -26,3 +26,4 @@ function sortArray(array) {
   return array;
 }
 console.log(sortArray(array.slice()));
+// Add quick sort
