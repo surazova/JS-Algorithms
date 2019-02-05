@@ -161,3 +161,5 @@ void drawBoard()
    printf(" %c | %c | %c \n", board[0], board[1], board[2]);
   }
 
+
+// Add tic tac tomek 
