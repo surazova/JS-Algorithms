@@ -1,3 +1,7 @@
+var winners = new Array();
+var player1Picks = new Array();
+var player2Picks = new Array();
+var timer;
 var numberOfPlayers = 2;
 var currentPlayer = 0;
 var move = 0; // Keeps track of the current iteration that you are in 
@@ -22,16 +26,22 @@ function drawBoard() {
   for (var i = 0; i < 3; i++) {
     var row = document.createElement("tr"); // Creating a row 
 
-    for (var x = 0; x < size; x++) {
+    for (var j = 0; j < 3; j++) {
       var col = document.createElement("td"); // Creating a column
-      col.innerHTML = counter;
       col.id = counter;
+      col.innerHTML = counter;
 
       // Handling winners
       var handler = function(e) {
         if (currentPlayer === 0) {
           this.innerHTML = "X";
           player1Picks.push(parseInt(this.id));
+          player2Picks.sort(function(a, b) { return a - b });
+        }
+
+        else {
+          this.innerHTML = "O";
+          player2Picks.push(parseInt(this.id));
           player2Picks.sort(function(a, b) { return a - b });
         }
 
@@ -73,12 +83,17 @@ function drawBoard() {
   loadAnswers();
 }
 
+// Function to clear/reset the gameboard
+function reset() {
+  currentPlayer = 0;
+  player1Picks = new Array();
+  player2Picks = new Array();
+}
 // Winning combinations 
 // Horizontal: [1, 2,3] [4, 5,6] [7, 8,9]
 // Vertical: [1, 4,7] [2,5,8] [3,6,9]
 // Diagonal: [1,5,9] [3,5,7]
 // Array stores the combinations
-var winners = new Array();
 
 function loadAnswers() {
   winners.push([1, 2, 3]);
@@ -94,8 +109,6 @@ function loadAnswers() {
 
 // Keep track of the selections that each player picks
 // Add two new variables to store the boxes that each player picks
-var player1Picks = new Array();
-var player2Picks = new Array();
 
 
 // Checking the winner 
@@ -120,13 +133,32 @@ function checkWinner() {
       var match = winners[k];
       var matchFound = true;
 
-      for (s = 0; s < match.length; s++) {
+      for (r = 0; r < match.length; r++) {
         // Check if the number is in the current players hand 
         // if not, break not winner 
         var found = false;
 
         // players hand 
+        for (s = 0; s < playerSelections.length; s++) {
+          if (picks[r] == playerSelections[2]) {
+            found = true;
+            break;
+          }
+        }
+        // values not found in players hand 
+        // not a valid set, move on 
+        if (found == false) {
+          setFound = false;
+          break;
+        }
+      }
+
+      if (setFound == true) {
+        win = true;
+        break;
       }
     }
   }
+  return win;
 }
+window.onload = drawBoard;
