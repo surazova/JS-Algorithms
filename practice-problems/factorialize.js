@@ -8,3 +8,10 @@ function factorialize(num) {
 
 }
 factorialize(5);
+
+
+
+// 1. go to the end of the lsit 
+// point to the second to last list 
+// free the last item 
+// update the second to last item to be the last item
