@@ -7,9 +7,17 @@ var size = 3;
 
 // Draws a tic tac toe board (n x n table) 
 // n = 3
+
+// Event Handlers for each click, alternate players until a winner is found 
+// When winner is found: Reset the board 
+
 function drawBoard() {
   var parent = document.getElementById("game");
   var counter = 1;
+
+  while (parent.hasChildNodes()) {
+    parent.removeChild(parent.firstChild);
+  }
 
   for (var i = 0; i < 3; i++) {
     var row = document.createElement("tr"); // Creating a row 
@@ -17,6 +25,26 @@ function drawBoard() {
     for (var x = 0; x < size; x++) {
       var col = document.createElement("td"); // Creating a column
       col.innerHTML = counter;
+      col.id = counter;
+
+      // Handling winners
+      var handler = function(e) {
+        if (currentPlayer === 0) {
+          this.innerHTML = "X";
+          player1Picks.push(parseInt(this.id));
+          player2Picks.sort(function(a, b) { return a - b });
+        }
+
+        move++;
+        var winner = checkWinner();
+
+        if (winner) {
+          if (currentPlayer == 0)
+            points1++; // A point goes to the first player
+          else
+            points2++; // A point goes to player 2
+        }
+      }
 
       row.appendChild(col);
 
@@ -42,3 +70,9 @@ function loadAnswers() {
   winners.push([1, 5, 9]);
   winners.push([3, 5, 7]);
 }
+
+
+// Keep track of the selections that each player picks
+// Add two new variables to store the boxes that each player picks
+var player1Picks = new Array();
+var player2Picks = new Array();
