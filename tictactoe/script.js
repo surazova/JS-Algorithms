@@ -13,5 +13,13 @@ function drawBoard() {
   for (var i = 0; i < 3; i++) {
     var row = document.createElement("tr"); // Creating a row 
 
+    for (var x = 0; x < size; x++) {
+      var col = document.createElement("td"); // Creating a column
+      col.innerHTML = counter;
+
+      row.appendChild(col);
+
+    }
+    parent.appendChild(row);
   }
 }
