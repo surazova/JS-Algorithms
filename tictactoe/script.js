@@ -140,7 +140,7 @@ function checkWinner() {
 
         // players hand 
         for (s = 0; s < playerSelections.length; s++) {
-          if (picks[r] == playerSelections[2]) {
+          if (match[r] == playerSelections[2]) {
             found = true;
             break;
           }
@@ -148,12 +148,12 @@ function checkWinner() {
         // values not found in players hand 
         // not a valid set, move on 
         if (found == false) {
-          setFound = false;
+          matchFound = false;
           break;
         }
       }
 
-      if (setFound == true) {
+      if (matchFound == true) {
         win = true;
         break;
       }
