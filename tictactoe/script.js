@@ -43,14 +43,34 @@ function drawBoard() {
             points1++; // A point goes to the first player
           else
             points2++; // A point goes to player 2
+
+          document.getElementById("player1").innerHTML = points1;
+          document.getElementById("player1").innerHTML = points1;
+
+          reset(); // After a winner is found
+          drawBoard(); // Board populates again
         }
-      }
+
+        else // if no winner is found yet 
+        {
+          if (currentPlayer == 0)
+            currentPlayer = 1;
+          else
+            currentPlayer = 0;
+          this.removeEventListener('click', arguments.callee); // Property of the arguments object, refers to the currently executing fucntion inside the function body of that function
+
+        }
+      };
+
+      col.addEventListener('click', handler);
 
       row.appendChild(col);
+      counter++;
 
     }
     parent.appendChild(row);
   }
+  loadAnswers();
 }
 
 // Winning combinations 
@@ -76,3 +96,37 @@ function loadAnswers() {
 // Add two new variables to store the boxes that each player picks
 var player1Picks = new Array();
 var player2Picks = new Array();
+
+
+// Checking the winner 
+// Checks that players array, with the lsit of predefined winners 
+// When both have matching arrays, there is a win
+
+function checkWinner() {
+  // Check if current player has a winning combination 
+  // Start checking when player X has size number of selections 
+  var win = false;
+  var playerSelections = new Array();
+
+  if (currentPlayer == 0)
+    playerSelections = player1Picks;
+  else
+    playerSelections = player2Picks;
+
+  if (playerSelections.length >= size) {
+    // Check is any winners are in your selections 
+
+    for (var k = 0; k < winners.length; k++) {
+      var match = winners[k];
+      var matchFound = true;
+
+      for (s = 0; s < match.length; s++) {
+        // Check if the number is in the current players hand 
+        // if not, break not winner 
+        var found = false;
+
+        // players hand 
+      }
+    }
+  }
+}
