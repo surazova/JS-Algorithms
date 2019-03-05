@@ -26,8 +26,15 @@
 function bouncingBall(h, br, win) {
 
   var seeBall = 0; {
+    // parameters
     if (h > 0 && br < 1 && h > win) {
+      // while loop
+      // while height of ball is higher than window
 
     }
   }
 }
+
+bouncingBall(3, .66, 1.5)
+
+// result should be 3
