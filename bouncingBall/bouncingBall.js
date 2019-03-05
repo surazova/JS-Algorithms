@@ -29,7 +29,16 @@ function bouncingBall(h, br, win) {
     // parameters
     if (h > 0 && br < 1 && h > win) {
       // while loop
-      // while height of ball is higher than window
+      // while height of ball is higher or equal to the height of the window
+      while (h >= win) {
+        // 3 > 1.5
+        seeBall++;
+        h *= br;
+        // h = 3 * .66 
+        // h = 1.98 = 2 (float)
+
+
+      }
 
     }
   }
