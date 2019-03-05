@@ -36,10 +36,22 @@ function bouncingBall(h, br, win) {
         h *= br;
         // h = 3 * .66 
         // h = 1.98 = 2 (float)
+        console.log(h)
 
-
+        // Second condition 
+        // if h > win
+        if (h > win) {
+          seeBall++ // 2 + 1 = 3
+        }
       }
+      return seeBall;
 
+
+    }
+    // For anything else, return -1
+
+    else {
+      return -1;
     }
   }
 }
