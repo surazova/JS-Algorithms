@@ -25,4 +25,9 @@
 
 function bouncingBall(h, br, win) {
 
+  var seeBall = 0; {
+    if (h > 0 && br < 1 && h > win) {
+
+    }
+  }
 }
