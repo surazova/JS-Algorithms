@@ -27,7 +27,7 @@ function bouncingBall(h, br, win) {
 
   var seeBall = 0; {
     // parameters
-    if (h > 0 && br < 1 && h > win) {
+    if (h > 0 && 0 > br < 1 && h > win) {
       // while loop
       // while height of ball is higher or equal to the height of the window
       while (h >= win) {
