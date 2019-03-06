@@ -16,20 +16,19 @@ var size = 3;
 // When winner is found: Reset the board 
 
 function drawBoard() {
-  var parent = document.getElementById("game");
+  var Parent = document.getElementById("game");
   var counter = 1;
 
-  while (parent.hasChildNodes()) {
-    parent.removeChild(parent.firstChild);
+  while (Parent.hasChildNodes()) {
+    Parent.removeChild(Parent.firstChild);
   }
 
-  for (var i = 0; i < 3; i++) {
+  for (var s = 0; s < 3; s++) {
     var row = document.createElement("tr"); // Creating a row 
 
-    for (var j = 0; j < 3; j++) {
+    for (var r = 0; r < 3; r++) {
       var col = document.createElement("td"); // Creating a column
       col.id = counter;
-      col.innerHTML = counter;
 
       // Handling winners
       var handler = function(e) {
@@ -48,6 +47,7 @@ function drawBoard() {
         move++;
         var winner = checkWinner();
 
+        // Detecting a draw
         if (winner) {
           if (currentPlayer == 0)
             points1++; // A point goes to the first player
@@ -61,6 +61,10 @@ function drawBoard() {
           drawBoard(); // Board populates again
         }
 
+        else if (player2Picks.length + player1Picks.length == 9) {
+          reset();
+          drawBoard();
+        }
         else // if no winner is found yet 
         {
           if (currentPlayer == 0)
@@ -78,7 +82,7 @@ function drawBoard() {
       counter++;
 
     }
-    parent.appendChild(row);
+    Parent.appendChild(row);
   }
   loadAnswers();
 }
@@ -129,8 +133,8 @@ function checkWinner() {
   if (playerSelections.length >= size) {
     // Check is any winners are in your selections 
 
-    for (var k = 0; k < winners.length; k++) {
-      var match = winners[k];
+    for (var i = 0; i < winners.length; i++) {
+      var match = winners[i];
       var matchFound = true;
 
       for (r = 0; r < match.length; r++) {
@@ -140,7 +144,7 @@ function checkWinner() {
 
         // players hand 
         for (s = 0; s < playerSelections.length; s++) {
-          if (match[r] == playerSelections[2]) {
+          if (match[r] == playerSelections[s]) {
             found = true;
             break;
           }
